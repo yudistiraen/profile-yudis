@@ -1,20 +1,25 @@
 {
   "name": "yudistira-profile",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NODE_ENV=development nodemon src/server/index.js --watch server",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "start": "cross-env NODE_ENV=production node src/server/index.js",
+    "generate": "nuxt generate",
+    "deploy": "firebase deploy --only functions,hosting",
+    "heroku-postbuild": "nuxt build" 
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
+    "nodemon": "^1.18.9",
     "@nuxtjs/vuetify": "^1.12.1"
   }
 }
