@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/server/index.js --watch server",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node src/server/index.js",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "deploy": "firebase deploy --only functions,hosting",
     "heroku-postbuild": "nuxt build" 
