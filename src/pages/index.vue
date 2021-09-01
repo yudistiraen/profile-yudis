@@ -8,10 +8,19 @@
                 <v-img src="/img/my-photo.png" width="245" max-width="300" class="left"/>
             </v-col>
             <v-col sm="12" md="6" class="px-5 py-5">
-              <!-- <div  style="margin: auto 0"> -->
                 <div class="text-h1">I'm Yudis</div>
-                <h2>Front End Developer</h2>
-              <!-- </div> -->
+                <h2 class="ml-2">Front End Developer</h2>
+                <div>
+                  <v-chip
+                    class="ma-2"
+                    v-for="(chip, i) in chips"
+                    :color="chip.color"
+                    :key="i"
+                  >
+                    <i class="mr-1" :class="chip.icon"></i>
+                    {{chip.title}}
+                  </v-chip>
+                </div>
             </v-col>
           </v-row>
           
@@ -72,6 +81,18 @@ export default {
     return {
       expand: null,
       tab: null,
+      chips: [
+        {
+          title: 'Vue',
+          color: '#42b883',
+          icon: 'fab fa-vuejs'
+        },
+        {
+          title: 'React',
+          color: '#61dbfb',
+          icon: 'fab fa-react'
+        }
+      ],
       contacts: [
         {
           icon: 'fab fa-linkedin-in',
