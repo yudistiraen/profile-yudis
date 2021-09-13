@@ -85,6 +85,11 @@ export default {
         },
         {
           icon: 'fas fa-smile-wink',
+          title: 'Final Fantasy XIV',
+          to: '/myffxiv'
+        },
+        {
+          icon: 'fas fa-smile-wink',
           title: 'TBD',
           to: ''
         }
