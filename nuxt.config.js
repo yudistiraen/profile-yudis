@@ -4,7 +4,6 @@ import pkg from './package.json'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - yudistira-profile',
     title: 'yudistira-profile',
     htmlAttrs: {
       lang: 'en'
