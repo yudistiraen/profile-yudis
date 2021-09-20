@@ -55,7 +55,7 @@
         </div>
         <div class="mt-10">
             <v-row>
-                <v-cols class="pa-2">
+                <v-col class="pa-2" md="5">
                     <template>
                         <div v-if="loading">
                             <v-skeleton-loader
@@ -67,27 +67,11 @@
                             <v-img :src="portraitUrl" width="360" max-width="360" class="r15-image"/>
                         </div>
                     </template>
-                </v-cols>
-                <v-cols class="pa-2">
-                    <v-row no-gutters>
-                        <v-col
-                            v-for="(job, i) in jobs"
-                            :key="i"
-                            cols="12"
-                            sm="4"
-                        >
-                            <v-card
-                            class="pa-2"
-                            outlined
-                            tile
-                            >
-                             {{job.UnlockedState.Name}}
-                            </v-card>
-                        </v-col>
-                    </v-row>
-                </v-cols>
+                </v-col>
+                <v-col class="pa-2" md="6">
+                    <jobs :charData="charData"/>
+                </v-col>
             </v-row>
-            
         </div>
       </v-card>
     </v-col>
@@ -96,6 +80,8 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+
+import jobs from '~/components/myffxiv/jobs';
 
 
 export default {
@@ -122,12 +108,9 @@ export default {
         const vm = this;
         return vm.charData.Character?.Server;
       },
-      jobs(){
-        const vm = this;
-        return vm.charData.Character?.ClassJobs;
-      }
   },
   components: { 
+    jobs
   },
   methods: {
       ...mapActions({
@@ -141,7 +124,7 @@ export default {
             vm.charData = charResponse;
             vm.loading = false;
           }
-      }
+      },
   },
   mounted(){
       const vm = this;
