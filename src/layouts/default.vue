@@ -15,7 +15,8 @@
           exact
         >
           <v-list-item-action>
-            <i :class="item.icon"></i>
+            <i v-if="item.icon" :class="item.icon"></i>
+            <v-img v-else :src="item.iconImg" width="25" max-width="25" class="left" style="filter: brightness(0) invert(1);"/>
             <!-- <v-icon>{{ item.icon }}</v-icon> -->
           </v-list-item-action>
           <v-list-item-content>
@@ -84,9 +85,16 @@ export default {
           to: '/'
         },
         {
-          icon: 'fas fa-smile-wink',
+          icon: '',
+          iconImg: '/img/xivmsq.png',
           title: 'Final Fantasy XIV',
           to: '/myffxiv'
+        },
+        {
+          icon: 'fas fa-list',
+          iconImg: '',
+          title: 'Change Log',
+          to: '/changelog'
         },
         {
           icon: 'fas fa-smile-wink',
