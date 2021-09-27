@@ -67,6 +67,23 @@ export default {
                       ]
                   }
               ]
+          },
+          {
+              version: '1.1.1',
+              log : [
+                  {
+                      content: 'Profile',
+                      changes: [
+                        'Change contacts tabs to button'
+                      ]
+                  },
+                  {
+                      content: 'Final Fantasy XIV',
+                      changes: [
+                        'Fixing mobile responsive'
+                      ]
+                  }
+              ]
           }
       ]
     }
