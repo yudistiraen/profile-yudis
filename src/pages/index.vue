@@ -25,36 +25,11 @@
           </v-row>
           
         </div>
-          <v-row justify="end" >
-                
-            <v-col md="5" sm="12" class="px-0"> 
-              <v-tabs
-                v-model="tab"
-                right
-              >
-                <v-tabs-slider color="yellow"></v-tabs-slider>
-
-                <v-tab
-                  v-for="(contact, i) in contacts"
-                  :key="i"
-                >
-                  <i style="color: white" :class="contact.icon"></i>
-                </v-tab>
-              </v-tabs>
-              <v-tabs-items v-model="tab">
-                <v-tab-item
-                  v-for="(contact, i) in contacts"
-                  :key="i"
-                >
-                  <v-card flat>
-                    <v-card-text align="right" v-text="contact.contact">
-                    </v-card-text>
-                  </v-card>
-                </v-tab-item>
-              </v-tabs-items>
-            </v-col>
-            
-          </v-row>
+        <v-row justify="end" >
+            <a v-for="(contact, i) in contacts" :key="i" class="contact-btn" :href="contact.href" target="_blank">
+              <i :class="contact.icon"></i>
+            </a>
+        </v-row>
       </v-card>
       <v-card class="px-10">
         <v-card-title class="headline font-weight-bold">
@@ -97,12 +72,12 @@ export default {
         {
           icon: 'fab fa-linkedin-in',
           title: 'Linkedin',
-          contact: 'https://www.linkedin.com/in/yudistira-nugraha-8b0756170/'
+          href: 'https://www.linkedin.com/in/yudistira-nugraha-8b0756170/'
         },
         {
-          icon: 'fas fa-envelope',
+          icon: 'far fa-envelope',
           title: 'Email',
-          contact: 'yudistira.enugraha@gmail.com'
+          href: 'mailto: yudistira.enugraha@gmail.com'
         }
       ],
       educations : [
@@ -131,6 +106,21 @@ export default {
 </script>
 
 <style scoped>
+  .contact-btn {
+    max-width: 50px;
+    text-align: center;
+    padding: 3px 15px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+
+  }
+  
+  .contact-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
   .contact-grid {
     max-width: 50px;
     border: 1px solid #ffffff;
