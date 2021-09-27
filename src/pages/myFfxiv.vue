@@ -55,20 +55,19 @@
         </div>
         <div class="mt-10">
             <v-row>
-                <v-col class="pa-2" md="5">
+                <v-col class="pa-2" cols="12" md="5">
                     <template>
-                        <div v-if="loading">
+                        <div v-if="loading" class="w-full">
                             <v-skeleton-loader
                                 type="image"
-                                width="360"
                             ></v-skeleton-loader>
                         </div>
                         <div v-else>
-                            <v-img :src="portraitUrl" width="360" max-width="360" class="r15-image"/>
+                            <v-img :src="portraitUrl" class="r15-image w-full"/>
                         </div>
                     </template>
                 </v-col>
-                <v-col class="pa-2" md="6">
+                <v-col class="pa-2" cols="12" md="6">
                     <jobs :charData="charData"/>
                 </v-col>
             </v-row>
