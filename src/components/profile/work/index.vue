@@ -3,13 +3,23 @@
         <v-card-title class="headline font-weight-bold">
             My work experience :
         </v-card-title>
-        <v-card-text v-for="(work, i) in works" :key="i">
-            <h3>{{work.position}}</h3>
-            <h3 class="font-weight-medium font-italic">{{work.company}} | {{work.location}}, {{work.periodStart}} - {{work.periodEnd}}</h3>
-            <ul v-for="(jobDesc, i) in work.jobDescs" :key="i">
-                <li>{{jobDesc}}</li>
-            </ul>
-        </v-card-text>
+        <v-row justify="center">
+          <v-expansion-panels accordion>
+            <v-expansion-panel
+              v-for="(work,i) in works"
+              :key="i"
+            >
+              <v-expansion-panel-header>
+                <b>{{work.company}}</b> <span class="font-weight-medium font-italic" style="text-align: right">{{work.position}} | {{work.location}}, {{work.periodStart}} - {{work.periodEnd}}</span>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <ul class="job-desc" v-for="(jobDesc, i) in work.jobDescs" :key="i">
+                    <li>{{jobDesc}}</li>
+                </ul>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-row>
     </v-card>
 </template>
 
@@ -65,3 +75,9 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+  ul.job-desc {
+    list-style-type: circle;
+  }
+</style>
