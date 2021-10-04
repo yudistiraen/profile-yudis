@@ -10,11 +10,15 @@
           </v-row>
         </div>
       </v-card>
-      <v-card class="px-10" v-for="(changes, i) in changesLog" :key="i">
-        <v-card-title class="headline font-weight-bold">
-          v{{changes.version}}
-        </v-card-title>
-        <v-card-text>
+      <v-expansion-panels accordion>
+        <v-expansion-panel
+          v-for="(changes, i) in changesLog" 
+          :key="i"
+        >
+          <v-expansion-panel-header>
+            <b>v{{changes.version}}</b>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
             <ul class="content-title">
                 <li class="mt-3" v-for="(change, i) in changes.log" :key="i">
                     <span class="title"> {{change.content}}</span>
@@ -23,8 +27,9 @@
                     </ul>
                 </li>
             </ul>
-        </v-card-text>
-      </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-col>
   </v-row>
 </template>
@@ -81,6 +86,23 @@ export default {
                       content: 'Final Fantasy XIV',
                       changes: [
                         'Fixing mobile responsive'
+                      ]
+                  }
+              ]
+          },
+          {
+              version: '1.1.2',
+              log : [
+                  {
+                      content: 'Profile',
+                      changes: [
+                        'Change job experience to accordion'
+                      ]
+                  },
+                  {
+                      content: 'Change Log',
+                      changes: [
+                        'Change Change-List to accordion'
                       ]
                   }
               ]
