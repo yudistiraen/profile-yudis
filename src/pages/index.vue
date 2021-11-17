@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="11">
-      <v-card class="logo pa-10">
+      <v-card flat class="logo pa-10">
         <div class="d-flex">
           <v-row>
             <v-col sm="12" md="3">
@@ -31,7 +31,7 @@
             </a>
         </v-row>
       </v-card>
-      <v-card class="px-10">
+      <v-card flat class="px-10">
         <v-card-title class="headline font-weight-bold">
           Hi fam, welcome to my profile.
         </v-card-title>

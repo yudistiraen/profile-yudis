@@ -9,27 +9,27 @@
             </v-col>
           </v-row>
         </div>
+         <v-expansion-panels accordion>
+          <v-expansion-panel
+            v-for="(changes, i) in changesLog" 
+            :key="i"
+          >
+            <v-expansion-panel-header>
+              <b>v{{changes.version}}</b>
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <ul class="content-title">
+                  <li class="mt-3" v-for="(change, i) in changes.log" :key="i">
+                      <span class="title"> {{change.content}}</span>
+                      <ul class="content-changes">
+                          <li v-for="(chgangeItem, i) in change.changes" :key="i">{{change.changes[i]}}</li>
+                      </ul>
+                  </li>
+              </ul>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-card>
-      <v-expansion-panels accordion>
-        <v-expansion-panel
-          v-for="(changes, i) in changesLog" 
-          :key="i"
-        >
-          <v-expansion-panel-header>
-            <b>v{{changes.version}}</b>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <ul class="content-title">
-                <li class="mt-3" v-for="(change, i) in changes.log" :key="i">
-                    <span class="title"> {{change.content}}</span>
-                    <ul class="content-changes">
-                        <li v-for="(chgangeItem, i) in change.changes" :key="i">{{change.changes[i]}}</li>
-                    </ul>
-                </li>
-            </ul>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
     </v-col>
   </v-row>
 </template>
@@ -143,5 +143,9 @@ export default {
 
   ul.content-changes {
     list-style-type: circle;
+  }
+
+  .v-expansion-panel::before {
+    box-shadow: none;
   }
 </style>

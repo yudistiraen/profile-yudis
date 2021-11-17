@@ -1,10 +1,10 @@
 <template>
-    <v-card class="px-10">
+    <v-card flat class="px-10 py-5">
         <v-card-title class="headline font-weight-bold">
             My work experience :
         </v-card-title>
         <v-row justify="center">
-          <v-expansion-panels accordion>
+          <v-expansion-panels accordion class="elevation-0">
             <v-expansion-panel
               v-for="(work,i) in works"
               :key="i"
@@ -79,5 +79,9 @@ export default {
 <style scoped lang="scss">
   ul.job-desc {
     list-style-type: circle;
+  }
+
+  .v-expansion-panel::before {
+    box-shadow: none;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <v-card class="px-10">
+    <v-card flat class="px-10">
         <v-card-title class="headline font-weight-bold">
             My education background :
         </v-card-title>
